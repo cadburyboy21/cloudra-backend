@@ -40,7 +40,7 @@ exports.shareFile = async (req, res, next) => {
                 isPublic: item.isPublic,
                 shareExpiresAt: item.shareExpiresAt,
                 sharedWith: item.sharedWith,
-                shareLink: `${process.env.CLIENT_URL || 'http://localhost:5173'}/share/${item.shareToken}`
+                shareLink: `${process.env.CLIENT_URL || 'https://cloudra-frontend.vercel.app'}/share/${item.shareToken}`
             }
         });
     } catch (err) {
@@ -84,7 +84,7 @@ exports.shareFolder = async (req, res, next) => {
                 isPublic: item.isPublic,
                 shareExpiresAt: item.shareExpiresAt,
                 sharedWith: item.sharedWith,
-                shareLink: `${process.env.CLIENT_URL || 'http://localhost:5173'}/share/${item.shareToken}`
+                shareLink: `${process.env.CLIENT_URL || 'https://cloudra-frontend.vercel.app'}/share/${item.shareToken}`
             }
         });
     } catch (err) {
@@ -250,7 +250,7 @@ exports.getShareSettings = async (req, res, next) => {
                 shareToken: item.shareToken,
                 shareExpiresAt: item.shareExpiresAt,
                 sharedWith: item.sharedWith,
-                shareLink: item.shareToken ? `${process.env.CLIENT_URL || 'http://localhost:5173'}/share/${item.shareToken}` : null
+                shareLink: item.shareToken ? `${process.env.CLIENT_URL || 'http://localhost:5173https://cloudra-frontend.vercel.app'}/share/${item.shareToken}` : null
             }
         });
     } catch (err) {

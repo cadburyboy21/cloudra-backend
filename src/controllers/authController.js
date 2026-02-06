@@ -36,7 +36,7 @@ exports.register = async (req, res, next) => {
         // Let's assume frontend is localhost:5173 or whatever.
         // Better to use env CLIENT_URL.
 
-        const clientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
+        const clientUrl = process.env.CLIENT_URL || 'https://cloudra-frontend.vercel.app';
         const message = `You are receiving this email because you (or someone else) has requested the creation of an account. Please click on the link below to activate your account:\n\n${clientUrl}/activate/${verificationToken}`;
 
         try {
@@ -167,7 +167,7 @@ exports.forgotPassword = async (req, res, next) => {
         await user.save({ validateBeforeSave: false });
 
         // Create reset url
-        const clientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
+        const clientUrl = process.env.CLIENT_URL || 'https://cloudra-frontend.vercel.app';
         const resetUrl = `${clientUrl}/reset-password/${resetToken}`;
 
         const message = `You are receiving this email because you (or someone else) has requested the reset of a password. Please make a PUT request to: \n\n ${resetUrl}`;
